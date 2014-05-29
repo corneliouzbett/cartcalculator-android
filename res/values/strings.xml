@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cart Calculator</string>
+    <string name="title_activity_home">Home</string>
+    <string name="label_add_item">Add item</string>
+    <string name="label_name">Name</string>
+    <string name="label_price">Price</string>
+    <string name="label_plus_symbol">+</string>
+    <string name="label_less_symbol">-</string>
+    <string name="title_activity_add_item">Add item</string>
+
+</resources>
