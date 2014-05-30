@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Calculadora de Compras</string>
+    <string name="title_activity_home">Início</string>
+    <string name="label_add_item">Adicionar item</string>
+    <string name="label_clear_list">Limpar</string>
+    <string name="label_name">Nome</string>
+    <string name="label_price">Preço</string>
+    <string name="label_plus_symbol">+</string>
+    <string name="label_less_symbol">-</string>
+    <string name="title_activity_add_item">Adicionar item</string>
+
+</resources>
