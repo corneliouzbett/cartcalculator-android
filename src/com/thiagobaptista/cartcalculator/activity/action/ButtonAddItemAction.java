@@ -1,14 +1,4 @@
-package com.thiagobaptista.cartcalculator.activity.action;
-
-import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
-
-import com.thiagobaptista.cartcalculator.activity.AddItemActivity;
-import com.thiagobaptista.cartcalculator.activity.HomeActivity;
-
-/**
- * 
+/*
  * Cart Calculator - simple, generic shopping cart total due calculator
  * Copyright (c) 2014 Thiago Gonçalves Baptista
  * contato@thiagobaptista.com
@@ -25,9 +15,17 @@ import com.thiagobaptista.cartcalculator.activity.HomeActivity;
  * 
  * You should have received a copy of the GNU General Public License 
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *
  */
+
+package com.thiagobaptista.cartcalculator.activity.action;
+
+import android.content.Intent;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+import com.thiagobaptista.cartcalculator.activity.AddItemActivity;
+import com.thiagobaptista.cartcalculator.activity.HomeActivity;
+
 public class ButtonAddItemAction implements OnClickListener
 {
 	public static final int REQUEST_CODE = 12;

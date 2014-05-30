@@ -1,19 +1,4 @@
-package com.thiagobaptista.cartcalculator.activity;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import com.thiagobaptista.cartcalculator.R;
-import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
-import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
-import com.thiagobaptista.cartcalculator.model.Cart;
-
-/**
- * 
+/*
  * Cart Calculator - simple, generic shopping cart total due calculator
  * Copyright (c) 2014 Thiago Gonçalves Baptista
  * contato@thiagobaptista.com
@@ -30,9 +15,22 @@ import com.thiagobaptista.cartcalculator.model.Cart;
  * 
  * You should have received a copy of the GNU General Public License 
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *
  */
+
+package com.thiagobaptista.cartcalculator.activity;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.thiagobaptista.cartcalculator.R;
+import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
+import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
+import com.thiagobaptista.cartcalculator.model.Cart;
+
 public class HomeActivity extends Activity 
 {
 	private Cart cart;
@@ -41,7 +39,9 @@ public class HomeActivity extends Activity
 	
 	private TextView totalTextView;
 	
-	private ListView itensListView;	
+	private ListView itensListView;
+	
+	private CartItemsListAdapter adapter;
 	
 	public Cart getCart()
 	{
@@ -90,20 +90,20 @@ public class HomeActivity extends Activity
 	
 	public void reloadList()
 	{
-		if (itensListView != null)
+		if (adapter != null)
 		{
-			/*ArrayAdapter<CartItem> adapter = new ArrayAdapter<CartItem>(
-					this, 
-					android.R.layout.simple_list_item_1, 
-					cart.getItems());*/
-			CartItemsListAdapter adapter = new CartItemsListAdapter(this, cart);
-			
-			itensListView.setAdapter(adapter);			
+			adapter.updateByCart(cart);
 		}
 		
+		reloadTotalDueText();
+	}
+
+	private void reloadTotalDueText()
+	{
 		if (totalTextView != null)
-		{
-			String totalText = "Total: " + cart.getTotalPrice();
+		{			
+			String totalText = "Total: " + cart.getTotalPriceText();
+			
 			totalTextView.setText(totalText);
 		}
 	}
@@ -132,6 +132,13 @@ public class HomeActivity extends Activity
 
 	private void setupCartItemListView()
 	{
-		itensListView = (ListView) findViewById(R.id.list_view_home_cart_items);				
+		itensListView = (ListView) findViewById(R.id.list_view_home_cart_items);
+		
+		if (itensListView != null)
+		{
+			adapter = new CartItemsListAdapter(this, cart);
+			
+			itensListView.setAdapter(adapter);			
+		}
 	}
 }

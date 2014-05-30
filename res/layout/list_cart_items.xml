@@ -14,10 +14,10 @@
         android:layout_height="match_parent" />
     
     <Button 
-        android:id="@+id/button_list_cart_items_plus_item" 
+        android:id="@+id/button_list_cart_items_less_item" 
 	    android:layout_width="wrap_content" 
 	    android:layout_height="match_parent" 
-	    android:text="@string/label_plus_symbol" />
+	    android:text="@string/label_less_symbol" />
     
     <TextView 
         android:id="@+id/text_view_list_cart_items_quantity" 
@@ -25,9 +25,9 @@
         android:layout_height="match_parent" />
     
     <Button 
-        android:id="@+id/button_list_cart_items_less_item" 
+        android:id="@+id/button_list_cart_items_plus_item" 
 	    android:layout_width="wrap_content" 
 	    android:layout_height="match_parent" 
-	    android:text="@string/label_less_symbol" />
+	    android:text="@string/label_plus_symbol" />
     
 </LinearLayout>

@@ -1,9 +1,4 @@
-package com.thiagobaptista.cartcalculator.model;
-
-import java.io.Serializable;
-
-/**
- * 
+/*
  * Cart Calculator - simple, generic shopping cart total due calculator
  * Copyright (c) 2014 Thiago Gonçalves Baptista
  * contato@thiagobaptista.com
@@ -20,12 +15,16 @@ import java.io.Serializable;
  * 
  * You should have received a copy of the GNU General Public License 
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- *
- *
  */
+
+package com.thiagobaptista.cartcalculator.model;
+
+import java.io.Serializable;
+import java.text.NumberFormat;
+
 public class CartItem implements Serializable
 {
-	private static final long serialVersionUID = 994760458297599495L;
+	private static final long serialVersionUID = 5913388571299622547L;
 
 	private int quantity;
 	
@@ -77,9 +76,12 @@ public class CartItem implements Serializable
 		return quantity;
 	}
 	
-	public double getUnitPrice()
+	public String getUnitPriceText()
 	{
-		return product.getPrice();
+		NumberFormat format = NumberFormat.getCurrencyInstance();
+		String unitPriceText = format.format( product.getPrice() );
+		
+		return unitPriceText;
 	}
 
 	public double getTotalPrice()
