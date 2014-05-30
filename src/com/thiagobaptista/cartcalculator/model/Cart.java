@@ -70,6 +70,11 @@ public class Cart implements Serializable
 		
 		return totalPriceText;
 	}
+	
+	public void clear() 
+	{
+		items = new ArrayList<CartItem>(0);	
+	}
 
 	private void generateCartItemArray()
 	{

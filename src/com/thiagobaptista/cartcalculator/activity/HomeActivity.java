@@ -28,6 +28,7 @@ import android.widget.TextView;
 
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
+import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
 import com.thiagobaptista.cartcalculator.model.Cart;
 
@@ -36,13 +37,14 @@ public class HomeActivity extends Activity
 	private Cart cart;
 	
 	private Button addItemButton;
+	private Button clearListButton;
 	
 	private TextView totalTextView;
 	
 	private ListView itensListView;
 	
 	private CartItemsListAdapter adapter;
-	
+
 	public Cart getCart()
 	{
 		return cart;
@@ -88,6 +90,14 @@ public class HomeActivity extends Activity
 		}
 	}
 	
+	public void clearList()
+	{
+		if (cart != null)
+		{
+			cart.clear();
+		}
+	}
+	
 	public void reloadList()
 	{
 		if (adapter != null)
@@ -113,6 +123,17 @@ public class HomeActivity extends Activity
 		setupCartItemListView();		
 		setupTotalTextView();		
 		setupAddItemButton();
+		setupClearListButton();
+	}
+
+	private void setupClearListButton()
+	{
+		clearListButton = (Button) findViewById(R.id.button_home_clear_list);
+		
+		if (clearListButton != null)
+		{
+			clearListButton.setOnClickListener( new ButtonClearListAction(this) );
+		}
 	}
 
 	private void setupAddItemButton()
