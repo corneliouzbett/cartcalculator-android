@@ -94,7 +94,7 @@ public class CartItemsListAdapter extends BaseAdapter
 	{
 		Button lessItemButton = (Button) view.findViewById(R.id.button_list_cart_items_less_item);
 		
-		lessItemButton.setOnClickListener( new ButtonLessItemAction(activity, item) );
+		lessItemButton.setOnClickListener( new ButtonLessItemAction(activity, cart, item) );
 	}
 
 	private void setupPlusItemButton(View view, CartItem item)

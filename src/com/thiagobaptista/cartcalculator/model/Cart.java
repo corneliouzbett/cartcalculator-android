@@ -27,7 +27,7 @@ import java.util.List;
 
 public class Cart implements Serializable
 {
-	private static final long serialVersionUID = 3144739503655180071L;
+	private static final long serialVersionUID = 4762017493226653677L;
 	
 	private List<CartItem> items;
 	
@@ -36,9 +36,14 @@ public class Cart implements Serializable
 		generateCartItemArray();
 	}
 	
-	public void addItem(CartItem item)
+	public void add(CartItem item)
 	{
 		items.add(item);
+	}
+	
+	public void remove(CartItem item)
+	{
+		items.remove(item);
 	}
 	
 	public int getSize()

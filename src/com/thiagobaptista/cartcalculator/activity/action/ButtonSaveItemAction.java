@@ -41,7 +41,7 @@ public class ButtonSaveItemAction implements OnClickListener
 	{
 		CartItem item = new CartItem( activity.getProduct() );
 		
-		activity.getCart().addItem(item);
+		activity.getCart().add(item);
 		
 		Intent result = new Intent();
 		result.putExtra("cart", activity.getCart());

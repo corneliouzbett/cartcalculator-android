@@ -23,17 +23,21 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.thiagobaptista.cartcalculator.activity.HomeActivity;
+import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
 public class ButtonLessItemAction implements OnClickListener
 {
 	private HomeActivity activity;
 	
+	private Cart cart;
+	
 	private CartItem item;
 	
-	public ButtonLessItemAction(HomeActivity activity, CartItem item)
+	public ButtonLessItemAction(HomeActivity activity, Cart cart, CartItem item)
 	{
 		this.activity = activity;
+		this.cart = cart;
 		this.item = item;
 	}
 
@@ -41,6 +45,11 @@ public class ButtonLessItemAction implements OnClickListener
 	public void onClick(View view)
 	{
 		item.decreaseQuantity();
+		
+		if (item.getQuantity() == 0)
+		{
+			cart.remove(item);
+		}
 		
 		activity.reloadList();
 	}
