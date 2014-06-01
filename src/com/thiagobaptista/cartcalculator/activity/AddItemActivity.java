@@ -42,17 +42,6 @@ public class AddItemActivity extends Activity
 	{
 		return cart;
 	}
-	
-	public Product getProduct()
-	{
-		Product product = new Product();
-		product.setName( name.getText().toString() );
-		product.setPrice(
-				Double.parseDouble( price.getText().toString() )
-				);
-		
-		return product;
-	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -63,6 +52,17 @@ public class AddItemActivity extends Activity
 		cart = (Cart) getIntent().getSerializableExtra("cart");
 		
 		setupViews();
+	}
+	
+	public Product getProduct()
+	{
+		Product product = new Product();
+		product.setName( name.getText().toString() );
+		product.setPrice(
+				Double.parseDouble( price.getText().toString() )
+				);
+		
+		return product;
 	}
 
 	private void setupViews()

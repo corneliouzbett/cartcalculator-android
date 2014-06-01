@@ -44,11 +44,6 @@ public class HomeActivity extends Activity
 	private ListView itensListView;
 	
 	private CartItemsListAdapter adapter;
-
-	public Cart getCart()
-	{
-		return cart;
-	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -88,6 +83,11 @@ public class HomeActivity extends Activity
 				}
 			}
 		}
+	}
+	
+	public Cart getCart()
+	{
+		return cart;
 	}
 	
 	public void clearList()

@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.thiagobaptista.cartcalculator.activity.HomeActivity"
-            android:label="@string/title_activity_home" >
+            android:label="@string/title_activity_home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +24,7 @@
         </activity>
         <activity
             android:name="com.thiagobaptista.cartcalculator.activity.AddItemActivity"
-            android:label="@string/title_activity_add_item" >
+            android:label="@string/title_activity_add_item">
         </activity>
     </application>
 
