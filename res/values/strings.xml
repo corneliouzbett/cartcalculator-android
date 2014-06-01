@@ -9,6 +9,6 @@
     <string name="label_price">Price</string>
     <string name="label_plus_symbol">+</string>
     <string name="label_less_symbol">-</string>
-    <string name="title_activity_add_item">Add</string>
+    <string name="title_activity_add_item">Add new item</string>
 
 </resources>
