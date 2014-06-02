@@ -37,11 +37,6 @@ public class AddItemActivity extends Activity
 	private Button save;
 
 	private Cart cart;
-	
-	public Cart getCart()
-	{
-		return cart;
-	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -52,6 +47,11 @@ public class AddItemActivity extends Activity
 		cart = (Cart) getIntent().getSerializableExtra("cart");
 		
 		setupViews();
+	}
+	
+	public Cart getCart()
+	{
+		return cart;
 	}
 	
 	public Product getProduct()

@@ -51,7 +51,7 @@ public class HomeActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		
-		cart = new Cart();
+		setupCart(savedInstanceState);		
 		
 		setupViews();
 	}
@@ -85,6 +85,17 @@ public class HomeActivity extends Activity
 		}
 	}
 	
+	@Override
+	protected void onSaveInstanceState(Bundle outState)
+	{
+		if (cart != null)
+		{
+			outState.putSerializable("cart", cart);
+		}
+		
+		super.onSaveInstanceState(outState);
+	}
+	
 	public Cart getCart()
 	{
 		return cart;
@@ -115,6 +126,18 @@ public class HomeActivity extends Activity
 			String totalText = "Total: " + cart.getTotalPriceText();
 			
 			totalTextView.setText(totalText);
+		}
+	}
+	
+	private void setupCart(Bundle savedInstanceState)
+	{
+		if (savedInstanceState != null)
+		{
+			cart = (Cart) savedInstanceState.getSerializable("cart");
+		}
+		else
+		{
+			cart = new Cart();			
 		}
 	}
 
