@@ -65,7 +65,8 @@ public class CartItemsListAdapter extends BaseAdapter
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items, null);
+		//View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items, null);
+		View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items2, null);
 		
 		CartItem item = (CartItem) getItem(position);
 		
@@ -94,34 +95,49 @@ public class CartItemsListAdapter extends BaseAdapter
 	{
 		Button lessItemButton = (Button) view.findViewById(R.id.button_list_cart_items_less_item);
 		
-		lessItemButton.setOnClickListener( new ButtonLessItemAction(activity, cart, item) );
+		if (lessItemButton != null)
+		{
+			lessItemButton.setOnClickListener(new ButtonLessItemAction(activity, cart, item));
+		}
 	}
 
 	private void setupPlusItemButton(View view, CartItem item)
 	{
 		Button plusItemButton = (Button) view.findViewById(R.id.button_list_cart_items_plus_item);
 		
-		plusItemButton.setOnClickListener( new ButtonPlusItemAction(activity, item) );
+		if (plusItemButton != null)
+		{
+			plusItemButton.setOnClickListener( new ButtonPlusItemAction(activity, item) );
+		}
 	}
 
 	private void setupQuantityTextView(View view, CartItem item)
 	{
 		TextView quantityTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_quantity);
 		
-		quantityTextView.setText("" + item.getQuantity());
+		if (quantityTextView != null)
+		{
+			quantityTextView.setText("" + item.getQuantity());
+		}
 	}
 
 	private void setupPriceTextView(View view, CartItem item)
 	{
 		TextView priceTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_price);
 		
-		priceTextView.setText( item.getUnitPriceText() );
+		if (priceTextView != null)
+		{
+			priceTextView.setText( item.getUnitPriceText() );
+		}
 	}
 
 	private void setupNameTextView(View view, CartItem item)
 	{
 		TextView nameTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_name);
 		
-		nameTextView.setText( item.getName() );
+		if (nameTextView != null)
+		{
+			nameTextView.setText( item.getName() );
+		}
 	}
 }

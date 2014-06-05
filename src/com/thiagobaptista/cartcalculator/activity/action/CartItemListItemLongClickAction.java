@@ -21,14 +21,16 @@ package com.thiagobaptista.cartcalculator.activity.action;
 
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnLongClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
 
-public class CartItemListLongClickAction implements OnLongClickListener
+public class CartItemListItemLongClickAction implements OnItemLongClickListener
 {
 	@Override
-	public boolean onLongClick(View view)
+	public boolean onItemLongClick(AdapterView<?> parent,
+			View view, int position, long id)
 	{
-		Log.d("debug", "OnLongClickListener called");
+		Log.d("debug", "onItemLongClick called");
 		return false;
 	}
 }

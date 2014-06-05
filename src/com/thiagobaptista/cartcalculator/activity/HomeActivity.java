@@ -22,10 +22,9 @@ package com.thiagobaptista.cartcalculator.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ContextMenu;
-import android.view.View;
 import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,7 +32,7 @@ import android.widget.TextView;
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
-import com.thiagobaptista.cartcalculator.activity.action.CartItemListLongClickAction;
+import com.thiagobaptista.cartcalculator.activity.action.CartItemListItemLongClickAction;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
 import com.thiagobaptista.cartcalculator.model.Cart;
 
@@ -59,13 +58,6 @@ public class HomeActivity extends Activity
 		setupCart(savedInstanceState);		
 		
 		setupViews();
-		
-		if (itensListView != null)
-		{
-			registerForContextMenu(itensListView);
-			Log.d("debug", "Passed by registerForContextMenu");
-			itensListView.setOnCreateContextMenuListener(this);
-		}
 	}
 	
 	@Override
@@ -85,9 +77,7 @@ public class HomeActivity extends Activity
 		{
 			if (resultCode == RESULT_OK)
 			{
-				Bundle extras = data.getExtras();
-				
-				Cart cart = (Cart) extras.get("cart");
+				Cart cart = (Cart) data.getExtras().get("cart");
 				
 				if (cart != null)
 				{
@@ -112,10 +102,7 @@ public class HomeActivity extends Activity
 	public void onCreateContextMenu(ContextMenu menu, View view,
 			ContextMenuInfo menuInfo)
 	{
-		//super.onCreateContextMenu(menu, view, menuInfo);
-		Log.d("debug", "onCreateContextMenu called");
-		menu.add("Delete");
-		//getMenuInflater().inflate(R.menu.home_cart_item_context_menu, menu);
+		getMenuInflater().inflate(R.menu.home_cart_item_context_menu, menu);
 	}
 	
 	public Cart getCart()
@@ -204,8 +191,10 @@ public class HomeActivity extends Activity
 		{
 			adapter = new CartItemsListAdapter(this, cart);			
 			itensListView.setAdapter(adapter);
-
-			//itensListView.setOnLongClickListener( new CartItemListLongClickAction() );
+			
+			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction() );
+			
+			registerForContextMenu(itensListView);
 		}
 	}
 }
