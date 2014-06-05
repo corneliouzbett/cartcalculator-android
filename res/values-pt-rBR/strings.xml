@@ -6,6 +6,7 @@
     <string name="label_add_item">Adicionar item</string>
     <string name="label_clear_list">Limpar</string>
     <string name="label_name">Nome</string>
+    <string name="label_delete_item">Apagar item</string>
     <string name="label_price">Preço</string>
     <string name="label_plus_symbol">+</string>
     <string name="label_less_symbol">-</string>
