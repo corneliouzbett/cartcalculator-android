@@ -20,8 +20,7 @@
 package com.thiagobaptista.cartcalculator.model;
 
 import java.io.Serializable;
-
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
+import java.text.NumberFormat;
 
 public class CartItem implements Serializable
 {
@@ -79,7 +78,10 @@ public class CartItem implements Serializable
 	
 	public String getUnitPriceText()
 	{
-		return new CurrencyStringsHelper().formattedTextFrom( product.getPrice() );
+		NumberFormat format = NumberFormat.getCurrencyInstance();
+		String unitPriceText = format.format( product.getPrice() );
+		
+		return unitPriceText;
 	}
 
 	public double getTotalPrice()

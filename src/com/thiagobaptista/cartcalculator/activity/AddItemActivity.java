@@ -26,7 +26,6 @@ import android.widget.EditText;
 
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonSaveItemAction;
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.Product;
 
@@ -57,13 +56,10 @@ public class AddItemActivity extends Activity
 	
 	public Product getProduct()
 	{
-		String nameText = name.getText().toString();
-		String priceText = price.getText().toString();
-		
 		Product product = new Product();
-		product.setName(nameText);
+		product.setName( name.getText().toString() );
 		product.setPrice(
-				new CurrencyStringsHelper().numericValueFrom(priceText)
+				Double.parseDouble( price.getText().toString() )
 				);
 		
 		return product;
@@ -78,22 +74,18 @@ public class AddItemActivity extends Activity
 
 	private void setupSaveButton()
 	{
-		save = (Button) findViewById(R.id.button_add_item_save);
+		this.save = (Button) findViewById(R.id.button_add_item_save);
 		
 		save.setOnClickListener( new ButtonSaveItemAction(this) );
 	}
 
 	private void setupPriceEditText()
 	{
-		price = (EditText) findViewById(R.id.edit_text_add_item_price);
-		
-		price.setText( new CurrencyStringsHelper().formattedTextFrom(0.0) );
-		
-		price.addTextChangedListener( new CurrencyMaskTextWatcher(price) );
+		this.price = (EditText) findViewById(R.id.edit_text_add_item_price);
 	}
 
 	private void setupNameEditText()
 	{
-		name = (EditText) findViewById(R.id.edit_text_add_item_name);
+		this.name = (EditText) findViewById(R.id.edit_text_add_item_name);
 	}
 }
