@@ -22,9 +22,6 @@ package com.thiagobaptista.cartcalculator.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ContextMenu;
-import android.view.ContextMenu.ContextMenuInfo;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,7 +29,6 @@ import android.widget.TextView;
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
-import com.thiagobaptista.cartcalculator.activity.action.CartItemListItemLongClickAction;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
 import com.thiagobaptista.cartcalculator.model.Cart;
 
@@ -96,13 +92,6 @@ public class HomeActivity extends Activity
 		}
 		
 		super.onSaveInstanceState(outState);
-	}
-	
-	@Override
-	public void onCreateContextMenu(ContextMenu menu, View view,
-			ContextMenuInfo menuInfo)
-	{
-		getMenuInflater().inflate(R.menu.home_cart_item_context_menu, menu);
 	}
 	
 	public Cart getCart()
@@ -189,12 +178,9 @@ public class HomeActivity extends Activity
 		
 		if (itensListView != null)
 		{
-			adapter = new CartItemsListAdapter(this, cart);			
+			adapter = new CartItemsListAdapter(this, cart);
+			
 			itensListView.setAdapter(adapter);
-			
-			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction() );
-			
-			registerForContextMenu(itensListView);
 		}
 	}
 }
