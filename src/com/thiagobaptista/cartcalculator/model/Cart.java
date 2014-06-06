@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
+import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class Cart implements Serializable
 {
@@ -71,7 +71,7 @@ public class Cart implements Serializable
 	
 	public String getTotalPriceText()
 	{		
-		return new CurrencyStringsHelper().formattedTextFrom( getTotalPrice() );
+		return new CurrencyStringUtil().formattedTextFrom( getTotalPrice() );
 	}
 	
 	public void clear() 

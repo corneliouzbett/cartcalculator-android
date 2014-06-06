@@ -21,7 +21,7 @@ package com.thiagobaptista.cartcalculator.model;
 
 import java.io.Serializable;
 
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
+import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class CartItem implements Serializable
 {
@@ -79,7 +79,7 @@ public class CartItem implements Serializable
 	
 	public String getUnitPriceText()
 	{
-		return new CurrencyStringsHelper().formattedTextFrom( product.getPrice() );
+		return new CurrencyStringUtil().formattedTextFrom( product.getPrice() );
 	}
 
 	public double getTotalPrice()

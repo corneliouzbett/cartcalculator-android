@@ -17,17 +17,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.thiagobaptista.cartcalculator.helper;
+package com.thiagobaptista.cartcalculator.util;
 
 import java.text.NumberFormat;
 
-public class CurrencyStringsHelper
+public class CurrencyStringUtil
 {
 	private NumberFormat numberFormat;
 	
 	private String currencySymbol;
 	
-	public CurrencyStringsHelper()
+	public CurrencyStringUtil()
 	{
 		numberFormat = NumberFormat.getCurrencyInstance();
 		

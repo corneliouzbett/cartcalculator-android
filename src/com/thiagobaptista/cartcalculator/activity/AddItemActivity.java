@@ -26,9 +26,10 @@ import android.widget.EditText;
 
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonSaveItemAction;
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
+import com.thiagobaptista.cartcalculator.activity.helper.CurrencyMaskTextWatcher;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.Product;
+import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class AddItemActivity extends Activity
 {
@@ -63,7 +64,7 @@ public class AddItemActivity extends Activity
 		Product product = new Product();
 		product.setName(nameText);
 		product.setPrice(
-				new CurrencyStringsHelper().numericValueFrom(priceText)
+				new CurrencyStringUtil().numericValueFrom(priceText)
 				);
 		
 		return product;
@@ -87,7 +88,7 @@ public class AddItemActivity extends Activity
 	{
 		price = (EditText) findViewById(R.id.edit_text_add_item_price);
 		
-		price.setText( new CurrencyStringsHelper().formattedTextFrom(0.0) );
+		price.setText( new CurrencyStringUtil().formattedTextFrom(0.0) );
 		
 		price.addTextChangedListener( new CurrencyMaskTextWatcher(price) );
 	}
