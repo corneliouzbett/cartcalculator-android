@@ -16,7 +16,8 @@
         Simple, generic shopping cart manager and total due calculator.\n\n
         Copyright &#169; 2014 Thiago Baptista.\n\n
         Cart Calculator for Android is free software, distributed under the GNU General Public License version 3.\n\n
-        For license information and bug reporting, please visit http://thiagobaptista.github.com/cartcalculator-android.
+        For license information and bug reporting, please visit:\n
+        http://thiagobaptista.github.com/cartcalculator-android.
     </string>
 
 </resources>
