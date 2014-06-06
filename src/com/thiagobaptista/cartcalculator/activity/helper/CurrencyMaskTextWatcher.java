@@ -17,13 +17,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.thiagobaptista.cartcalculator.activity;
+package com.thiagobaptista.cartcalculator.activity.helper;
 
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
+import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class CurrencyMaskTextWatcher implements TextWatcher
 {
@@ -74,7 +74,7 @@ public class CurrencyMaskTextWatcher implements TextWatcher
 
 	private String parseInput(String input)
 	{
-		CurrencyStringsHelper helper = new CurrencyStringsHelper();
+		CurrencyStringUtil helper = new CurrencyStringUtil();
 		
 		double numericValue = helper.numericValueFrom(input);			
 		String formatedText = helper.formattedTextFrom(numericValue);

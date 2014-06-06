@@ -22,6 +22,8 @@ package com.thiagobaptista.cartcalculator.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,6 +32,7 @@ import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
+import com.thiagobaptista.cartcalculator.activity.helper.AboutAlertDialog;
 import com.thiagobaptista.cartcalculator.model.Cart;
 
 public class HomeActivity extends Activity 
@@ -92,6 +95,28 @@ public class HomeActivity extends Activity
 		}
 		
 		super.onSaveInstanceState(outState);
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		getMenuInflater().inflate(R.menu.home_options_menu, menu);
+		
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch ( item.getItemId() )
+		{
+			case R.id.home_options_menu_about:
+				new AboutAlertDialog(this).show();
+				return false;
+	
+			default:
+				return super.onOptionsItemSelected(item);
+		}
 	}
 	
 	public Cart getCart()
