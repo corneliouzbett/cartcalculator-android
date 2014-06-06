@@ -20,10 +20,11 @@
 package com.thiagobaptista.cartcalculator.model;
 
 import java.io.Serializable;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.thiagobaptista.cartcalculator.helper.CurrencyStringsHelper;
 
 public class Cart implements Serializable
 {
@@ -69,11 +70,8 @@ public class Cart implements Serializable
 	}
 	
 	public String getTotalPriceText()
-	{
-		NumberFormat format = NumberFormat.getCurrencyInstance();
-		String totalPriceText = format.format( getTotalPrice() );
-		
-		return totalPriceText;
+	{		
+		return new CurrencyStringsHelper().formattedTextFrom( getTotalPrice() );
 	}
 	
 	public void clear() 
