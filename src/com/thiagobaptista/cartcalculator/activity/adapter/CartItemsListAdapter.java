@@ -65,8 +65,7 @@ public class CartItemsListAdapter extends BaseAdapter
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		//View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items, null);
-		View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items2, null);
+		View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items, null);
 		
 		CartItem item = (CartItem) getItem(position);
 		
