@@ -19,30 +19,34 @@
 
 package com.thiagobaptista.cartcalculator.activity.action;
 
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemLongClickListener;
+import android.view.MenuItem;
+import android.view.MenuItem.OnMenuItemClickListener;
 
 import com.thiagobaptista.cartcalculator.activity.HomeActivity;
+import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
-public class CartItemListItemLongClickAction implements OnItemLongClickListener
+public class CartItemContextMenuDeleteAction implements OnMenuItemClickListener
 {
 	private HomeActivity activity;
 	
-	public CartItemListItemLongClickAction(HomeActivity activity)
+	private Cart cart;
+	
+	public CartItemContextMenuDeleteAction(HomeActivity activity)
 	{
 		this.activity = activity;
+		
+		this.cart = this.activity.getCart();
 	}
 
 	@Override
-	public boolean onItemLongClick(AdapterView<?> parent,
-			View view, int position, long id)
+	public boolean onMenuItemClick(MenuItem menuItem)
 	{
-		CartItem item = (CartItem) parent.getItemAtPosition(position);
+		CartItem cartItem = activity.getSelectedCartItem();
+		cart.remove(cartItem);
 		
-		activity.setSelectedCartItem(item);
+		activity.reloadList();
 		
-		return false;
+		return true;
 	}
 }
