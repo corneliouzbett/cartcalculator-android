@@ -11,7 +11,7 @@
     <string name="label_price">Preço</string>
     <string name="label_plus_symbol">+</string>
     <string name="label_less_symbol">-</string>
-    <string name="title_activity_add_item">Adicionar novo ítem</string>
+    <string name="title_activity_add_item">Adicionar novo item</string>
     <string name="alert_dialog_about_content">
         Calculadora de Compras\n
         Gerenciador e calculadora simples e genérica para carrinho de compras.\n\n
@@ -20,5 +20,6 @@
         Para informações sobre a licença e para relatar bugs, por favor visite:\n
         http://thiagobaptista.github.com/cartcalculator-android
     </string>
+    <string name="title_contextmenu_cart_items">Opções de item do carrinho</string>
 
 </resources>

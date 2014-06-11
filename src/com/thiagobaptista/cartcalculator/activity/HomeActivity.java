@@ -24,6 +24,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -31,13 +35,20 @@ import android.widget.TextView;
 import com.thiagobaptista.cartcalculator.R;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
+
+import com.thiagobaptista.cartcalculator.activity.action.CartItemContextMenuDeleteAction;
+import com.thiagobaptista.cartcalculator.activity.action.CartItemListItemLongClickAction;
+
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
 import com.thiagobaptista.cartcalculator.activity.helper.AboutAlertDialog;
 import com.thiagobaptista.cartcalculator.model.Cart;
+import com.thiagobaptista.cartcalculator.model.CartItem;
 
 public class HomeActivity extends Activity 
 {
 	private Cart cart;
+	
+	private CartItem selectedCartItem;
 	
 	private Button addItemButton;
 	private Button clearListButton;
@@ -119,9 +130,41 @@ public class HomeActivity extends Activity
 		}
 	}
 	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View view, ContextMenuInfo menuInfo)
+	{
+		getMenuInflater().inflate(R.menu.home_cart_item_context_menu, menu);
+		menu.setHeaderTitle(R.string.title_contextmenu_cart_items);
+	}
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem menuItem)
+	{
+		switch ( menuItem.getItemId() )
+	    {
+	        case R.id.menu_item_cart_item_context_delete:
+	        {
+	        	return new CartItemContextMenuDeleteAction(this).onMenuItemClick(menuItem);
+	        }
+	        default:
+	            return super.onContextItemSelected(menuItem);
+	    }
+
+	}
+	
 	public Cart getCart()
 	{
 		return cart;
+	}
+	
+	public CartItem getSelectedCartItem()
+	{
+		return selectedCartItem;
+	}
+	
+	public void setSelectedCartItem(CartItem selectedCartItem)
+	{
+		this.selectedCartItem = selectedCartItem;
 	}
 	
 	public void clearList()
@@ -206,6 +249,9 @@ public class HomeActivity extends Activity
 			adapter = new CartItemsListAdapter(this, cart);
 			
 			itensListView.setAdapter(adapter);
+			
+			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(this) );			
+			registerForContextMenu(itensListView);
 		}
 	}
 }

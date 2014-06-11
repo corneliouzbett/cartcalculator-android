@@ -19,5 +19,6 @@
         For license information and bug reporting, please visit:\n
         http://thiagobaptista.github.com/cartcalculator-android.
     </string>
+    <string name="title_contextmenu_cart_items">Cart item options</string>
 
 </resources>
