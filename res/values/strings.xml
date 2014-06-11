@@ -10,6 +10,7 @@
     <string name="label_price">Price</string>
     <string name="label_plus_symbol">+</string>
     <string name="label_less_symbol">-</string>
+    <string name="label_delete_item">Delete item</string>
     <string name="title_activity_add_item">Add new item</string>
     <string name="alert_dialog_about_content">
         Cart Calculator\n

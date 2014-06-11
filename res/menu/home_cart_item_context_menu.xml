@@ -1,0 +1,7 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item 
+        android:id="@+id/menu_item_cart_item_context_delete" 
+        android:title="@string/label_delete_item" />
+    
+</menu>
