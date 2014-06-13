@@ -57,7 +57,7 @@ public class Cart implements Serializable
 		return items;
 	}
 	
-	public double getTotalPrice()
+	public double getTotalDue()
 	{
 		double total = 0.0;
 		
@@ -69,9 +69,9 @@ public class Cart implements Serializable
 		return total;
 	}
 	
-	public String getTotalPriceText()
+	public String getTotalDueText()
 	{		
-		return new CurrencyStringUtil().formattedTextFrom( getTotalPrice() );
+		return new CurrencyStringUtil().formattedTextFrom( getTotalDue() );
 	}
 	
 	public void clear() 
@@ -79,6 +79,7 @@ public class Cart implements Serializable
 		items = new ArrayList<CartItem>(0);	
 	}
 
+	//for debug purposes
 	private void generateCartItemArray()
 	{
 		CartItem [] itens = {

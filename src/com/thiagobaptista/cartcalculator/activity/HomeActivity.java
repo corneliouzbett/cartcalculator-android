@@ -50,7 +50,7 @@ public class HomeActivity extends Activity
 	private Button addItemButton;
 	private Button clearListButton;
 	
-	private TextView totalTextView;
+	private TextView totalDueTextView;
 	
 	private ListView itensListView;
 	
@@ -184,11 +184,11 @@ public class HomeActivity extends Activity
 
 	private void reloadTotalDueText()
 	{
-		if (totalTextView != null)
+		if (totalDueTextView != null)
 		{			
-			String totalText = "Total: " + cart.getTotalPriceText();
+			String totalText = cart.getTotalDueText();
 			
-			totalTextView.setText(totalText);
+			totalDueTextView.setText(totalText);
 		}
 	}
 	
@@ -207,7 +207,7 @@ public class HomeActivity extends Activity
 	private void setupViews()
 	{
 		setupCartItemListView();		
-		setupTotalTextView();		
+		setupTotalDueTextView();		
 		setupAddItemButton();
 		setupClearListButton();
 	}
@@ -232,9 +232,9 @@ public class HomeActivity extends Activity
 		}
 	}
 
-	private void setupTotalTextView()
+	private void setupTotalDueTextView()
 	{
-		totalTextView = (TextView) findViewById(R.id.text_view_home_total_price);
+		totalDueTextView = (TextView) findViewById(R.id.text_view_home_total_due);
 	}
 
 	private void setupCartItemListView()

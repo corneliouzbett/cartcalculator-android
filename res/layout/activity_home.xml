@@ -21,7 +21,13 @@
         android:padding="4dp">
         
 	    <TextView 
-	        android:id="@+id/text_view_home_total_price" 
+            android:layout_width="match_parent" 
+            android:layout_height="wrap_content" 
+            android:gravity="center" 
+            android:textSize="25sp" 
+            android:text="@string/label_total" />
+	    <TextView 
+	        android:id="@+id/text_view_home_total_due" 
 	        android:layout_width="match_parent" 
 	        android:layout_height="wrap_content" 
 	        android:gravity="center" 
