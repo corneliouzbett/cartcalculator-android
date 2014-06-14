@@ -1,0 +1,12 @@
+<resources>
+    
+    <dimen name="zero">0dp</dimen>
+    <dimen name="standard_space">4dp</dimen>
+    
+    <dimen name="textview_total_due_label_size">25sp</dimen>
+    <dimen name="textview_total_due_value_size">35sp</dimen>
+    
+    <dimen name="button_item_quantity_width">48dp</dimen>
+    <dimen name="textview_item_quantity_width">32dp</dimen>
+    
+</resources>

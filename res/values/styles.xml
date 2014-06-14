@@ -23,8 +23,16 @@
     
     <style name="HomeLinearLayoutWeightedChild">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">0dp</item>
-        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_height">@dimen/zero</item>
+        <item name="android:layout_marginBottom">@dimen/standard_space</item>
+    </style>
+    
+    <style name="CartItemsListTextViewItemName">
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="CartItemsListTextViewItemPrice">
+        <item name="android:textStyle">italic</item>
     </style>
 
 </resources>

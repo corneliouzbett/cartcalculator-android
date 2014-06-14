@@ -9,27 +9,27 @@
     <ListView
         android:id="@+id/list_view_home_cart_items" 
         android:layout_weight="2" 
-        android:padding="4dp" 
+        android:padding="@dimen/standard_space" 
         style="@style/HomeLinearLayoutWeightedChild" />
     
     <LinearLayout 
         android:orientation="vertical" 
         android:layout_weight="1" 
-        android:padding="4dp" 
+        android:padding="@dimen/standard_space" 
         style="@style/HomeLinearLayoutWeightedChild">
         
 	    <TextView 
             android:layout_width="match_parent" 
             android:layout_height="wrap_content" 
             android:gravity="center" 
-            android:textSize="25sp" 
+            android:textSize="@dimen/textview_total_due_label_size" 
             android:text="@string/label_total" />
 	    <TextView 
 	        android:id="@+id/text_view_home_total_due" 
 	        android:layout_width="match_parent" 
 	        android:layout_height="wrap_content" 
 	        android:gravity="center" 
-	        android:textSize="35sp" />
+	        android:textSize="@dimen/textview_total_due_value_size" />
 	    
 	    <Button 
 	        android:id="@+id/button_home_add_item" 
