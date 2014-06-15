@@ -35,19 +35,22 @@
 	        android:id="@+id/button_list_cart_items_less_item" 
 		    android:layout_width="@dimen/button_item_quantity_width" 
 		    android:layout_height="match_parent" 
-		    android:text="@string/label_less_symbol" />
+		    android:text="@string/label_less_symbol" 
+		    android:textStyle="bold" />
 	    
 	    <TextView 
 	        android:id="@+id/text_view_list_cart_items_quantity" 
 	        android:layout_width="@dimen/textview_item_quantity_width" 
 	        android:layout_height="match_parent" 
-	        android:gravity="center" />
+	        android:gravity="center" 
+	        style="@style/CartItemsListTextViewItemQuantity" />
 	    
 	    <Button 
 	        android:id="@+id/button_list_cart_items_plus_item" 
 		    android:layout_width="@dimen/button_item_quantity_width" 
 		    android:layout_height="match_parent" 
-		    android:text="@string/label_plus_symbol" />
+		    android:text="@string/label_plus_symbol" 
+            android:textStyle="bold" />
 	    
 	</LinearLayout>
     
