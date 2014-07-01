@@ -31,18 +31,6 @@
 	        android:gravity="center" 
 	        android:textSize="@dimen/textview_total_due_value_size" />
 	    
-	    <Button 
-	        android:id="@+id/button_home_add_item" 
-		    android:layout_width="match_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/label_add_item" />
-	    
-	    <Button 
-	        android:id="@+id/button_home_clear_list" 
-		    android:layout_width="match_parent" 
-		    android:layout_height="wrap_content" 
-		    android:text="@string/label_clear_list" />
-	    
     </LinearLayout>
 
 </LinearLayout>

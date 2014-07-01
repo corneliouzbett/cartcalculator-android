@@ -20,13 +20,11 @@
 package com.thiagobaptista.cartcalculator.activity.action;
 
 import android.content.Intent;
-import android.view.View;
-import android.view.View.OnClickListener;
 
 import com.thiagobaptista.cartcalculator.activity.AddItemActivity;
 import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 
-public class ButtonAddItemAction implements OnClickListener
+public class ButtonAddItemAction
 {
 	public static final int REQUEST_CODE = 12;
 	
@@ -37,8 +35,7 @@ public class ButtonAddItemAction implements OnClickListener
 		this.activity = activity;
 	}
 
-	@Override
-	public void onClick(View view)
+	public void onClick()
 	{
 		Intent intent = new Intent(activity, AddItemActivity.class);
 		intent.putExtra("cart", activity.getCart());

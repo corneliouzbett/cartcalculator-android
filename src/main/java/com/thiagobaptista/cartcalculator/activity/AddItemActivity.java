@@ -19,8 +19,8 @@
 
 package com.thiagobaptista.cartcalculator.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -31,7 +31,7 @@ import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.Product;
 import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
-public class AddItemActivity extends Activity
+public class AddItemActivity extends ActionBarActivity
 {
 	private EditText name;	
 	private EditText price;

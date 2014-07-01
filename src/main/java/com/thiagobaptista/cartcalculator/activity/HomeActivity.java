@@ -19,15 +19,14 @@
 
 package com.thiagobaptista.cartcalculator.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -41,14 +40,11 @@ import com.thiagobaptista.cartcalculator.activity.helper.AboutAlertDialog;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
-public class HomeActivity extends Activity 
+public class HomeActivity extends ActionBarActivity 
 {
 	private Cart cart;
 	
 	private CartItem selectedCartItem;
-	
-	private Button addItemButton;
-	private Button clearListButton;
 	
 	private TextView totalDueTextView;
 	
@@ -118,12 +114,25 @@ public class HomeActivity extends Activity
 	{
 		switch ( item.getItemId() )
 		{
+			case R.id.home_options_menu_add_item:
+			{
+				new ButtonAddItemAction(this).onClick();
+				return false;
+			}
+			case R.id.home_options_menu_clear_list:
+			{
+				new ButtonClearListAction(this).onClick(null);
+				return false;
+			}
 			case R.id.home_options_menu_about:
+			{
 				new AboutAlertDialog(this).show();
 				return false;
-	
+			}
 			default:
+			{
 				return super.onOptionsItemSelected(item);
+			}
 		}
 	}
 	
@@ -144,7 +153,9 @@ public class HomeActivity extends Activity
 	        	return new CartItemContextMenuDeleteAction(this).onMenuItemClick(menuItem);
 	        }
 	        default:
-	            return super.onContextItemSelected(menuItem);
+	        {
+	        	return super.onContextItemSelected(menuItem);	        	
+	        }
 	    }
 
 	}
@@ -207,29 +218,7 @@ public class HomeActivity extends Activity
 	private void setupViews()
 	{
 		setupCartItemListView();		
-		setupTotalDueTextView();		
-		setupAddItemButton();
-		setupClearListButton();
-	}
-
-	private void setupClearListButton()
-	{
-		clearListButton = (Button) findViewById(R.id.button_home_clear_list);
-		
-		if (clearListButton != null)
-		{
-			clearListButton.setOnClickListener( new ButtonClearListAction(this) );
-		}
-	}
-
-	private void setupAddItemButton()
-	{
-		addItemButton = (Button) findViewById(R.id.button_home_add_item);
-		
-		if (addItemButton != null)
-		{
-			addItemButton.setOnClickListener( new ButtonAddItemAction(this) );
-		}
+		setupTotalDueTextView();
 	}
 
 	private void setupTotalDueTextView()
