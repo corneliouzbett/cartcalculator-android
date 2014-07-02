@@ -19,21 +19,20 @@
 
 package com.thiagobaptista.cartcalculator.activity.action;
 
-import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 
 public class ButtonClearListAction
 {
-	private HomeActivity activity;
+	private CartItemsListHandler handler;
 	
-	public ButtonClearListAction(HomeActivity activity)
+	public ButtonClearListAction(CartItemsListHandler handler)
 	{
-		this.activity = activity;
+		this.handler = handler;
 	}
 
 	public void onClick()
 	{
-		activity.clearList();
+		handler.clearList();
 		
-		activity.reloadList();
+		handler.reloadList();
 	}
 }

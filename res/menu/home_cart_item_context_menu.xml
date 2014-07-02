@@ -2,6 +2,7 @@
 
     <item 
         android:id="@+id/menu_item_cart_item_context_delete" 
-        android:title="@string/label_delete_item" />
+        android:title="@string/label_delete_item" 
+        android:icon="@drawable/ic_action_discard" />
     
 </menu>

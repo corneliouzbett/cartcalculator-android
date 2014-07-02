@@ -22,18 +22,17 @@ package com.thiagobaptista.cartcalculator.activity.action;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
 public class ButtonPlusItemAction implements OnClickListener
 {
-	private HomeActivity activity;
+	private CartItemsListHandler handler;
 	
 	private CartItem item;
 	
-	public ButtonPlusItemAction(HomeActivity activity, CartItem item)
+	public ButtonPlusItemAction(CartItemsListHandler handler, CartItem item)
 	{
-		this.activity = activity;
+		this.handler = handler;
 		this.item = item;
 	}
 
@@ -42,6 +41,6 @@ public class ButtonPlusItemAction implements OnClickListener
 	{
 		item.increaseQuantity();
 		
-		activity.reloadList();
+		handler.reloadList();
 	}
 }

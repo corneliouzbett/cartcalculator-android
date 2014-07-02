@@ -23,16 +23,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
 public class CartItemListItemLongClickAction implements OnItemLongClickListener
 {
-	private HomeActivity activity;
+	private CartItemsListHandler handler;
 	
-	public CartItemListItemLongClickAction(HomeActivity activity)
+	public CartItemListItemLongClickAction(CartItemsListHandler handler)
 	{
-		this.activity = activity;
+		this.handler = handler;
 	}
 
 	@Override
@@ -41,7 +40,7 @@ public class CartItemListItemLongClickAction implements OnItemLongClickListener
 	{
 		CartItem item = (CartItem) parent.getItemAtPosition(position);
 		
-		activity.setSelectedCartItem(item);
+		handler.setSelectedCartItem(item);
 		
 		return false;
 	}

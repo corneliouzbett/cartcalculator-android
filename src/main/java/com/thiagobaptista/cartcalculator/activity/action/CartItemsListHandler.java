@@ -19,33 +19,18 @@
 
 package com.thiagobaptista.cartcalculator.activity.action;
 
-import android.view.MenuItem;
-import android.view.MenuItem.OnMenuItemClickListener;
-
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
-public class CartItemContextMenuDeleteAction implements OnMenuItemClickListener
+public interface CartItemsListHandler
 {
-	private CartItemsListHandler handler;
+	CartItem getSelectedCartItem();
 	
-	private Cart cart;
-	
-	public CartItemContextMenuDeleteAction(CartItemsListHandler handler)
-	{
-		this.handler = handler;
-		
-		this.cart = this.handler.getCart();
-	}
+	void setSelectedCartItem(CartItem item);
 
-	@Override
-	public boolean onMenuItemClick(MenuItem menuItem)
-	{
-		CartItem cartItem = handler.getSelectedCartItem();
-		cart.remove(cartItem);
-		
-		handler.reloadList();
-		
-		return true;
-	}
+	Cart getCart();
+
+	void reloadList();
+
+	void clearList();
 }

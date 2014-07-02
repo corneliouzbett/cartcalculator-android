@@ -35,12 +35,13 @@ import com.thiagobaptista.cartcalculator.activity.action.ButtonAddItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonClearListAction;
 import com.thiagobaptista.cartcalculator.activity.action.CartItemContextMenuDeleteAction;
 import com.thiagobaptista.cartcalculator.activity.action.CartItemListItemLongClickAction;
+import com.thiagobaptista.cartcalculator.activity.action.CartItemsListHandler;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
 import com.thiagobaptista.cartcalculator.activity.helper.AboutAlertDialog;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
-public class HomeActivity extends ActionBarActivity 
+public class HomeActivity extends ActionBarActivity implements CartItemsListHandler 
 {
 	private Cart cart;
 	
