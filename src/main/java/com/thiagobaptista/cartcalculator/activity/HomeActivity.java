@@ -55,8 +55,7 @@ public class HomeActivity extends ActionBarActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_home);
+		performInitialSetup(savedInstanceState);
 		
 		setupCart(savedInstanceState);		
 		
@@ -69,6 +68,17 @@ public class HomeActivity extends ActionBarActivity
 		super.onResume();
 		
 		reloadList();
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState)
+	{
+		if (cart != null)
+		{
+			outState.putSerializable("cart", cart);
+		}
+		
+		super.onSaveInstanceState(outState);
 	}
 	
 	@Override
@@ -91,17 +101,6 @@ public class HomeActivity extends ActionBarActivity
 	}
 	
 	@Override
-	protected void onSaveInstanceState(Bundle outState)
-	{
-		if (cart != null)
-		{
-			outState.putSerializable("cart", cart);
-		}
-		
-		super.onSaveInstanceState(outState);
-	}
-	
-	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		getMenuInflater().inflate(R.menu.home_options_menu, menu);
@@ -121,7 +120,7 @@ public class HomeActivity extends ActionBarActivity
 			}
 			case R.id.home_options_menu_clear_list:
 			{
-				new ButtonClearListAction(this).onClick(null);
+				new ButtonClearListAction(this).onClick();
 				return false;
 			}
 			case R.id.home_options_menu_about:
@@ -160,21 +159,6 @@ public class HomeActivity extends ActionBarActivity
 
 	}
 	
-	public Cart getCart()
-	{
-		return cart;
-	}
-	
-	public CartItem getSelectedCartItem()
-	{
-		return selectedCartItem;
-	}
-	
-	public void setSelectedCartItem(CartItem selectedCartItem)
-	{
-		this.selectedCartItem = selectedCartItem;
-	}
-	
 	public void clearList()
 	{
 		if (cart != null)
@@ -191,6 +175,27 @@ public class HomeActivity extends ActionBarActivity
 		}
 		
 		reloadTotalDueText();
+	}
+	
+	public Cart getCart()
+	{
+		return cart;
+	}
+	
+	public CartItem getSelectedCartItem()
+	{
+		return selectedCartItem;
+	}
+	
+	public void setSelectedCartItem(CartItem selectedCartItem)
+	{
+		this.selectedCartItem = selectedCartItem;
+	}
+	
+	private void performInitialSetup(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_home);
 	}
 
 	private void reloadTotalDueText()
@@ -217,15 +222,11 @@ public class HomeActivity extends ActionBarActivity
 
 	private void setupViews()
 	{
-		setupCartItemListView();		
+		setupCartItemListView();	
+		
 		setupTotalDueTextView();
 	}
-
-	private void setupTotalDueTextView()
-	{
-		totalDueTextView = (TextView) findViewById(R.id.text_view_home_total_due);
-	}
-
+	
 	private void setupCartItemListView()
 	{
 		itensListView = (ListView) findViewById(R.id.list_view_home_cart_items);
@@ -239,5 +240,10 @@ public class HomeActivity extends ActionBarActivity
 			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(this) );			
 			registerForContextMenu(itensListView);
 		}
+	}
+
+	private void setupTotalDueTextView()
+	{
+		totalDueTextView = (TextView) findViewById(R.id.text_view_home_total_due);
 	}
 }

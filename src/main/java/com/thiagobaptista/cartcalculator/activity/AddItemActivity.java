@@ -43,10 +43,11 @@ public class AddItemActivity extends ActionBarActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_add_item);
+		performInitialSetup(savedInstanceState);
 		
-		cart = (Cart) getIntent().getSerializableExtra("cart");
+		setupActionBar();
+		
+		setupCart();
 		
 		setupViews();
 	}
@@ -69,6 +70,22 @@ public class AddItemActivity extends ActionBarActivity
 		
 		return product;
 	}
+	
+	private void performInitialSetup(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_add_item);
+	}
+	
+	private void setupActionBar()
+	{
+		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+	
+	private void setupCart()
+	{
+		cart = (Cart) getIntent().getSerializableExtra("cart");
+	}
 
 	private void setupViews()
 	{
@@ -76,14 +93,12 @@ public class AddItemActivity extends ActionBarActivity
 		setupPriceEditText();		
 		setupSaveButton();
 	}
-
-	private void setupSaveButton()
+	
+	private void setupNameEditText()
 	{
-		save = (Button) findViewById(R.id.button_add_item_save);
-		
-		save.setOnClickListener( new ButtonSaveItemAction(this) );
+		name = (EditText) findViewById(R.id.edit_text_add_item_name);
 	}
-
+	
 	private void setupPriceEditText()
 	{
 		price = (EditText) findViewById(R.id.edit_text_add_item_price);
@@ -93,8 +108,10 @@ public class AddItemActivity extends ActionBarActivity
 		price.addTextChangedListener( new CurrencyMaskTextWatcher(price) );
 	}
 
-	private void setupNameEditText()
+	private void setupSaveButton()
 	{
-		name = (EditText) findViewById(R.id.edit_text_add_item_name);
+		save = (Button) findViewById(R.id.button_add_item_save);
+		
+		save.setOnClickListener( new ButtonSaveItemAction(this) );
 	}
 }

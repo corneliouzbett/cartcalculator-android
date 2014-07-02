@@ -19,12 +19,9 @@
 
 package com.thiagobaptista.cartcalculator.activity.action;
 
-import android.view.View;
-import android.view.View.OnClickListener;
-
 import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 
-public class ButtonClearListAction implements OnClickListener
+public class ButtonClearListAction
 {
 	private HomeActivity activity;
 	
@@ -33,8 +30,7 @@ public class ButtonClearListAction implements OnClickListener
 		this.activity = activity;
 	}
 
-	@Override
-	public void onClick(View view)
+	public void onClick()
 	{
 		activity.clearList();
 		
