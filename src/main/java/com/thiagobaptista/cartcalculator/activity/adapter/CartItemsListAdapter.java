@@ -19,6 +19,7 @@
 
 package com.thiagobaptista.cartcalculator.activity.adapter;
 
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -26,22 +27,25 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.thiagobaptista.cartcalculator.R;
-import com.thiagobaptista.cartcalculator.activity.HomeActivity;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonLessItemAction;
 import com.thiagobaptista.cartcalculator.activity.action.ButtonPlusItemAction;
+import com.thiagobaptista.cartcalculator.activity.action.CartItemsListHandler;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
 public class CartItemsListAdapter extends BaseAdapter
 {
-	private HomeActivity activity;
-	
 	private Cart cart;
+
+	private CartItemsListHandler handler;
 	
-	public CartItemsListAdapter(HomeActivity activity, Cart cart)
+	private LayoutInflater inflater;
+	
+	public CartItemsListAdapter(CartItemsListHandler handler, LayoutInflater inflater, Cart cart)
 	{
-		this.activity = activity;
-		this.cart = cart;
+		this.handler = handler;
+		this.inflater = inflater;
+		this.cart = cart;		
 	}
 	
 	@Override
@@ -65,7 +69,7 @@ public class CartItemsListAdapter extends BaseAdapter
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		View view = activity.getLayoutInflater().inflate(R.layout.list_cart_items, null);
+		View view = inflater.inflate(R.layout.list_cart_items, null);
 		
 		CartItem item = (CartItem) getItem(position);
 		
@@ -96,7 +100,7 @@ public class CartItemsListAdapter extends BaseAdapter
 		
 		if (lessItemButton != null)
 		{
-			lessItemButton.setOnClickListener(new ButtonLessItemAction(activity, cart, item));
+			lessItemButton.setOnClickListener(new ButtonLessItemAction(handler, cart, item));
 		}
 	}
 
@@ -106,7 +110,7 @@ public class CartItemsListAdapter extends BaseAdapter
 		
 		if (plusItemButton != null)
 		{
-			plusItemButton.setOnClickListener( new ButtonPlusItemAction(activity, item) );
+			plusItemButton.setOnClickListener( new ButtonPlusItemAction(handler, item) );
 		}
 	}
 

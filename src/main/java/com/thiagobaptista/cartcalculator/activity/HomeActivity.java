@@ -37,11 +37,12 @@ import com.thiagobaptista.cartcalculator.activity.action.CartItemContextMenuDele
 import com.thiagobaptista.cartcalculator.activity.action.CartItemListItemLongClickAction;
 import com.thiagobaptista.cartcalculator.activity.action.CartItemsListHandler;
 import com.thiagobaptista.cartcalculator.activity.adapter.CartItemsListAdapter;
+import com.thiagobaptista.cartcalculator.activity.delegate.HomeActivityCartItemsListDelegate;
 import com.thiagobaptista.cartcalculator.activity.helper.AboutAlertDialog;
 import com.thiagobaptista.cartcalculator.model.Cart;
 import com.thiagobaptista.cartcalculator.model.CartItem;
 
-public class HomeActivity extends ActionBarActivity implements CartItemsListHandler 
+public class HomeActivity extends ActionBarActivity 
 {
 	private Cart cart;
 	
@@ -52,6 +53,8 @@ public class HomeActivity extends ActionBarActivity implements CartItemsListHand
 	private ListView itensListView;
 	
 	private CartItemsListAdapter adapter;
+	
+	private CartItemsListHandler handler;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -121,7 +124,7 @@ public class HomeActivity extends ActionBarActivity implements CartItemsListHand
 			}
 			case R.id.home_options_menu_clear_list:
 			{
-				new ButtonClearListAction(this).onClick();
+				new ButtonClearListAction(handler).onClick();
 				return false;
 			}
 			case R.id.home_options_menu_about:
@@ -150,7 +153,7 @@ public class HomeActivity extends ActionBarActivity implements CartItemsListHand
 	    {
 	        case R.id.menu_item_cart_item_context_delete:
 	        {
-	        	return new CartItemContextMenuDeleteAction(this).onMenuItemClick(menuItem);
+	        	return new CartItemContextMenuDeleteAction(handler).onMenuItemClick(menuItem);
 	        }
 	        default:
 	        {
@@ -197,6 +200,8 @@ public class HomeActivity extends ActionBarActivity implements CartItemsListHand
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
+		
+		this.handler = new HomeActivityCartItemsListDelegate(this);
 	}
 
 	private void reloadTotalDueText()
@@ -234,11 +239,11 @@ public class HomeActivity extends ActionBarActivity implements CartItemsListHand
 		
 		if (itensListView != null)
 		{
-			adapter = new CartItemsListAdapter(this, cart);
+			adapter = new CartItemsListAdapter(handler, getLayoutInflater(), cart);
 			
 			itensListView.setAdapter(adapter);
 			
-			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(this) );			
+			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(handler) );			
 			registerForContextMenu(itensListView);
 		}
 	}
