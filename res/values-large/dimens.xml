@@ -3,8 +3,8 @@
     <dimen name="textview_list_item_name_size">25sp</dimen>
     <dimen name="textview_list_item_price_size">20sp</dimen>
     <dimen name="textview_list_item_quantity_size">20sp</dimen>
-    <dimen name="textview_total_due_label_size">35sp</dimen>
-    <dimen name="textview_total_due_value_size">60sp</dimen>
+    <dimen name="textview_total_due_label_size">64sp</dimen>
+    <dimen name="textview_total_due_value_size">96sp</dimen>
     
     <dimen name="button_item_quantity_width">52dp</dimen>
     <dimen name="textview_item_quantity_width">40dp</dimen>
