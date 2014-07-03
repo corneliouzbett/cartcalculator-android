@@ -38,7 +38,8 @@ public class CartItemListItemLongClickAction implements OnItemLongClickListener
 	public boolean onItemLongClick(AdapterView<?> parent,
 			View view, int position, long id)
 	{
-		CartItem item = (CartItem) parent.getItemAtPosition(position);		
+		CartItem item = (CartItem) parent.getItemAtPosition(position);
+		
 		handler.setSelectedCartItem(item);
 		
 		return false;
