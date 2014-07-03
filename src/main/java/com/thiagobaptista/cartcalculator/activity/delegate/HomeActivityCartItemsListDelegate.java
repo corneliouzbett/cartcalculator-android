@@ -63,5 +63,4 @@ public class HomeActivityCartItemsListDelegate implements CartItemsListHandler
 	{
 		activity.clearList();
 	}
-
 }
