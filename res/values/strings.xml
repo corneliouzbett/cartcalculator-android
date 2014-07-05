@@ -6,6 +6,7 @@
     <string name="label_about">About</string>
     <string name="label_add_item">Add item</string>
     <string name="label_clear_list">Clear</string>
+    <string name="label_empty_list">Your shopping cart is empty.</string>
     <string name="label_name">Name</string>
     <string name="label_price">Price</string>
     <string name="label_plus_symbol">+</string>

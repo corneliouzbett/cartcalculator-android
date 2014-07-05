@@ -11,6 +11,12 @@
         android:layout_weight="2" 
         android:padding="@dimen/standard_space" 
         style="@style/HomeLinearLayoutWeightedChild" />
+    <TextView 
+        android:id="@+id/empty_list" 
+        android:layout_width="match_parent" 
+        android:layout_height="match_parent" 
+        android:gravity="center" 
+        android:text="@string/label_empty_list" />
     
     <LinearLayout 
         android:orientation="vertical" 

@@ -239,12 +239,35 @@ public class HomeActivity extends ActionBarActivity
 		
 		if (itensListView != null)
 		{
-			adapter = new CartItemsListAdapter(handler, getLayoutInflater(), cart);
+			setupListViewAdapter();
 			
-			itensListView.setAdapter(adapter);
+			setupListViewContextMenu();
 			
-			itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(handler) );			
-			registerForContextMenu(itensListView);
+			setupEmptyListView();
+		}
+	}
+
+	private void setupListViewAdapter()
+	{
+		adapter = new CartItemsListAdapter(handler, getLayoutInflater(), cart);
+		
+		itensListView.setAdapter(adapter);
+	}
+	
+	private void setupListViewContextMenu()
+	{
+		itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(handler) );
+		
+		registerForContextMenu(itensListView);
+	}
+
+	private void setupEmptyListView()
+	{
+		TextView emptyListTextView = (TextView) findViewById(R.id.empty_list);
+		
+		if (emptyListTextView != null)
+		{
+			itensListView.setEmptyView(emptyListTextView);
 		}
 	}
 
