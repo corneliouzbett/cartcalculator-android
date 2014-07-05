@@ -35,6 +35,7 @@ public class Cart implements Serializable
 	public Cart()
 	{
 		//generateCartItemArray();
+		items = new ArrayList<CartItem>(0);
 	}
 	
 	public void add(CartItem item)

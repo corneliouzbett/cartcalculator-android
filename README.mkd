@@ -1,7 +1,42 @@
 # Cart Calculator
 
-Copyright 2014 Thiago Gonçalves Baptista. This program is free software distributed under the GNU General Public License version 3. See the file LICENSE.txt for more information.
+A simple, generic and shopping cart manager and total due calculator for Android.
+
+## Your helping hand while shopping
+
+Cart Calculator is a simple, generic and free shopping cart manager and total due calculator.
+
+Unlike other grocery list managers, the aim of this app is simplicity and objectivity.
+
+Indeed, it is as simple as it sounds: it replaces the ordinary device's calculator for when you are at the grocery store or at the market, so you can manage your shopping cart by adding products and increasing or decreasing their quantities.
+
+At any time, the Cart Calculator displays the total due of the products in your cart based on their prices and quantities. You'll always be aware of how much you're spending even before reaching the checkout. This is specially useful for when you absolutely has to go shopping but has little money, or when you're at the end of the month and on a budget.
+
+And since Cart Calculator is shockingly simple and generic, you can also use it outside the grocery store or market, such as in pubs, restaurants, the movies etc.
+
+## Easy to use
+
+Using Cart Calculator to manage your shopping cart is very easy and designed to be straight forward:
+
+* From the Home screen, you will see a list of itens in your cart, along with their names, prices and quantities
+* Press the "Add item" button in the Action Bar to add a new product to your cart. You inform its name and price and then click on the "Add" button.
+* If you want to add another product of the same kind - that is, increase its quantity in the cart -, simply find it in the list and then press the "+ (plus)" button. Likewise, if you want to take away some of this product, just hit the "- (less)" button.
+* To remove a product from the list, simply drop its quantity to zero, or long click it in the list
+ and then select the "Delete item" button
+* At any given time, the amount of money due to payent is shown in the Home screen, updated for every change you did
+
+## Free, open source software
+
+Cart Calculator is proudly free software - anyone can have access to its source code, study it or even modify it for her or his own needs. It is distributed under the GNU General Public Licence vesion 3. And a true free software it will remain in any future releases.
+
+## Contributing and bug reporting
+
+If you wish to contribute to this project, or if you simply want to report a bug, please get in touch with me! Help is more than welcome.
+
+The best way to do both things is through the project's Github repository page at http://github.com/thiagobaptista/cartcalculator-android. From there, you can fork it and work in your contributions, and later send them back via pull request. You can also use the issue tracker to report bugs, propose new features or enhancements, or get ideas for how you could help.
+
+## Legal notice
+
+Copyright (C) 2014 Thiago Gonçalves Baptista. This program is free software distributed under the GNU General Public License version 3. See the file LICENSE.txt for more information.
 
 Cart Calculator logo based on Calculator by SuperAtic LABS and Shopping Cart by Gonzalo Bravo, from The Noun Project, licensed under Creative Commons Attribution.
-
-Cart Calculator is a simple, generic shopping cart manager and total due calculator.
