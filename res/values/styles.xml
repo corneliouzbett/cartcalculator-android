@@ -40,5 +40,16 @@
     <style name="CartItemsListTextViewItemQuantity">
         <item name="android:textSize">@dimen/textview_list_item_quantity_size</item>
     </style>
+    
+    <style name="AddItemLayout">
+        <item name="android:paddingTop">@dimen/quadruple_space</item>
+        <item name="android:paddingLeft">@dimen/quadruple_space</item>
+        <item name="android:paddingRight">@dimen/quadruple_space</item>
+    </style>
+    
+    <style name="AddItemChild">
+        <item name="android:paddingLeft">@dimen/double_space</item>
+        <item name="android:paddingRight">@dimen/double_space</item>
+    </style>
 
 </resources>

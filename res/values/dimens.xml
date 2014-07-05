@@ -2,6 +2,8 @@
     
     <dimen name="zero">0dp</dimen>
     <dimen name="standard_space">4dp</dimen>
+    <dimen name="double_space">8dp</dimen>
+    <dimen name="quadruple_space">16dp</dimen>
     
     <dimen name="textview_list_item_name_size">18sp</dimen>
     <dimen name="textview_list_item_price_size">14sp</dimen>
