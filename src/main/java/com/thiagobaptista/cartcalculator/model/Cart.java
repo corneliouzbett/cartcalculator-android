@@ -28,13 +28,13 @@ import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class Cart implements Serializable
 {
-	private static final long serialVersionUID = 4762017493226653677L;
+	private static final long serialVersionUID = -7764200800949285163L;
 	
 	private List<CartItem> items;
 	
 	public Cart()
 	{
-		generateCartItemArray();
+		//generateCartItemArray();
 	}
 	
 	public void add(CartItem item)
@@ -80,6 +80,7 @@ public class Cart implements Serializable
 	}
 
 	//for debug purposes
+	@SuppressWarnings("unused")
 	private void generateCartItemArray()
 	{
 		CartItem [] itens = {
