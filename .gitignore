@@ -28,6 +28,8 @@ proguard/
 #Log Files
 *.log
 
+# Windows clutter
+Thumbs.db
 
 ### OSX ###
 .DS_Store
@@ -52,6 +54,11 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# Intellij IDEA (see https://intellij-support.jetbrains.com/entries/23393067)
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/datasources.xml
+.idea/dataSources.ids
 
 ### Eclipse ###
 *.pydevproject

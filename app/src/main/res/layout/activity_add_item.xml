@@ -1,0 +1,42 @@
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:tools="http://schemas.android.com/tools" 
+	android:layout_width="match_parent" 
+	android:layout_height="match_parent" 
+	android:orientation="vertical" 
+	style="@style/AddItemLayout" 
+	tools:context="${packageName}.${activityClass}">
+    
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/label_name" 
+		style="@style/AddItemChild" />	
+	<EditText
+		android:id="@+id/edit_text_add_item_name"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:inputType="textCapSentences" 
+        style="@style/AddItemChild" />
+	
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/label_price" 
+        style="@style/AddItemChild" />	
+	<EditText
+		android:id="@+id/edit_text_add_item_price"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:inputType="numberDecimal" 
+        style="@style/AddItemChild" />
+	
+	<Button 
+        android:id="@+id/button_add_item_save" 
+	    android:layout_height="wrap_content"
+	    android:layout_width="match_parent"
+	    android:text="@string/label_add_item" 
+        style="@style/AddItemChild" />
+    
+</LinearLayout>
+

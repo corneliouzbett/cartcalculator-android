@@ -1,0 +1,23 @@
+<menu 
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:ccl="http://schemas.android.com/apk/res-auto">
+    
+    <item 
+        android:id="@+id/home_options_menu_add_item" 
+        android:title="@string/label_add_item" 
+        android:icon="@drawable/ic_action_new"
+        ccl:showAsAction="ifRoom|withText" />
+    
+    <item 
+        android:id="@+id/home_options_menu_clear_list" 
+        android:title="@string/label_clear_list" 
+        android:icon="@drawable/ic_action_discard" 
+        ccl:showAsAction="ifRoom|withText" />
+    
+    <item 
+        android:id="@+id/home_options_menu_about" 
+        android:title="@string/label_about" 
+        android:icon="@drawable/ic_action_about"
+        ccl:showAsAction="ifRoom|withText" />
+    
+</menu>
