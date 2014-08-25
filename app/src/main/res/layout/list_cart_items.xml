@@ -31,12 +31,12 @@
         android:layout_gravity="right" 
         android:layout_alignParentRight="true">
 	    
-	    <Button 
-	        android:id="@+id/button_list_cart_items_less_item" 
+	    <ImageButton
+	        android:id="@+id/button_list_cart_items_minus_item"
 		    android:layout_width="@dimen/button_item_quantity_width" 
-		    android:layout_height="match_parent" 
-		    android:text="@string/label_less_symbol" 
-		    android:textStyle="bold" />
+		    android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_minus"/>
 	    
 	    <TextView 
 	        android:id="@+id/text_view_list_cart_items_quantity" 
@@ -45,12 +45,12 @@
 	        android:gravity="center" 
 	        style="@style/CartItemsListTextViewItemQuantity" />
 	    
-	    <Button 
+	    <ImageButton
 	        android:id="@+id/button_list_cart_items_plus_item" 
 		    android:layout_width="@dimen/button_item_quantity_width" 
-		    android:layout_height="match_parent" 
-		    android:text="@string/label_plus_symbol" 
-            android:textStyle="bold" />
+		    android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@drawable/btn_plus" />
 	    
 	</LinearLayout>
     

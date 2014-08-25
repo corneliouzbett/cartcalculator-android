@@ -23,7 +23,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.thiagobaptista.cartcalculator.R;
@@ -70,9 +70,7 @@ public class CartItemsListAdapter extends BaseAdapter
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
 		View view = inflater.inflate(R.layout.list_cart_items, null);
-		
 		CartItem item = (CartItem) getItem(position);
-		
 		setupViews(view, item);
 		
 		return view;
@@ -81,7 +79,6 @@ public class CartItemsListAdapter extends BaseAdapter
 	public void updateByCart(Cart cart)
 	{
 		this.cart = cart;
-		
 		notifyDataSetChanged();
 	}
 
@@ -96,18 +93,16 @@ public class CartItemsListAdapter extends BaseAdapter
 
 	private void setupLessItemButton(View view, CartItem item)
 	{
-		Button lessItemButton = (Button) view.findViewById(R.id.button_list_cart_items_less_item);
-		
-		if (lessItemButton != null)
+        ImageButton minusItemButton = (ImageButton) view.findViewById(R.id.button_list_cart_items_minus_item);
+		if (minusItemButton != null)
 		{
-			lessItemButton.setOnClickListener(new ButtonLessItemAction(handler, cart, item));
+			minusItemButton.setOnClickListener(new ButtonLessItemAction(handler, cart, item));
 		}
 	}
 
 	private void setupPlusItemButton(View view, CartItem item)
 	{
-		Button plusItemButton = (Button) view.findViewById(R.id.button_list_cart_items_plus_item);
-		
+		ImageButton plusItemButton = (ImageButton) view.findViewById(R.id.button_list_cart_items_plus_item);
 		if (plusItemButton != null)
 		{
 			plusItemButton.setOnClickListener( new ButtonPlusItemAction(handler, item) );
@@ -117,7 +112,6 @@ public class CartItemsListAdapter extends BaseAdapter
 	private void setupQuantityTextView(View view, CartItem item)
 	{
 		TextView quantityTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_quantity);
-		
 		if (quantityTextView != null)
 		{
 			quantityTextView.setText("" + item.getQuantity());
@@ -127,7 +121,6 @@ public class CartItemsListAdapter extends BaseAdapter
 	private void setupPriceTextView(View view, CartItem item)
 	{
 		TextView priceTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_price);
-		
 		if (priceTextView != null)
 		{
 			priceTextView.setText( item.getUnitPriceText() );
@@ -137,7 +130,6 @@ public class CartItemsListAdapter extends BaseAdapter
 	private void setupNameTextView(View view, CartItem item)
 	{
 		TextView nameTextView = (TextView) view.findViewById(R.id.text_view_list_cart_items_name);
-		
 		if (nameTextView != null)
 		{
 			nameTextView.setText( item.getName() );

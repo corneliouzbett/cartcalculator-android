@@ -22,20 +22,22 @@
         android:orientation="vertical" 
         android:layout_weight="1" 
         android:padding="@dimen/standard_space" 
-        style="@style/HomeLinearLayoutWeightedChild">
+        style="@style/HomeTotalDueFooter">
         
 	    <TextView 
             android:layout_width="match_parent" 
             android:layout_height="wrap_content" 
-            android:gravity="center" 
+            android:gravity="center"
             android:textSize="@dimen/textview_total_due_label_size" 
-            android:text="@string/label_total" />
+            android:text="@string/label_total"
+            style="@style/HomeTotalDueFooterLabel"  />
 	    <TextView 
 	        android:id="@+id/text_view_home_total_due" 
 	        android:layout_width="match_parent" 
 	        android:layout_height="wrap_content" 
 	        android:gravity="center" 
-	        android:textSize="@dimen/textview_total_due_value_size" />
+	        android:textSize="@dimen/textview_total_due_value_size"
+            style="@style/HomeTotalDueFooterValue" />
 	    
     </LinearLayout>
 

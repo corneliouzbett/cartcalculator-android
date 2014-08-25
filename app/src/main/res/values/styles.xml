@@ -1,22 +1,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!--
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    -->
-    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
-        <!--
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        -->
-    </style>
+    <style name="AppTheme" parent="Theme.Cartcalculator" />
 
-    <!-- Application theme. -->
-    <style name="AppTheme" parent="AppBaseTheme">
-        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
-    </style>
-    
     <style name="HomeLinearLayout">
         <item name="android:orientation">vertical</item>
     </style>
@@ -24,7 +9,6 @@
     <style name="HomeLinearLayoutWeightedChild">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/zero</item>
-        <item name="android:layout_marginBottom">@dimen/standard_space</item>
     </style>
     
     <style name="CartItemsListTextViewItemName">
@@ -39,6 +23,18 @@
     
     <style name="CartItemsListTextViewItemQuantity">
         <item name="android:textSize">@dimen/textview_list_item_quantity_size</item>
+    </style>
+
+    <style name="HomeTotalDueFooter" parent="HomeLinearLayoutWeightedChild">
+        <item name="android:background">@color/dark_brown</item>
+    </style>
+
+    <style name="HomeTotalDueFooterLabel">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="HomeTotalDueFooterValue">
+        <item name="android:textColor">@color/bright_orange</item>
     </style>
     
     <style name="AddItemLayout">
