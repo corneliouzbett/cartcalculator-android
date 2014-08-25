@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Generated with http://android-holo-colors.com -->
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="EditTextCCL_Component" parent="android:Widget.EditText">
+	  <item name="android:background">@drawable/ccl_component_edit_text_holo_light</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ButtonCCL_Component" parent="android:Widget.Button">
+	  <item name="android:background">@drawable/ccl_component_btn_default_holo_light</item>
+	  <item name="android:minHeight">48dip</item>
+	  <item name="android:minWidth">64dip</item>
+	  <item name="android:textColor">#000000</item>
+  </style>
+
+  <style name="ImageButtonCCL_Component" parent="android:Widget.ImageButton">
+	  <item name="android:background">@drawable/ccl_component_btn_default_holo_light</item>
+  </style>
+
+  <style name="ListViewCCL_Component" parent="android:Widget.ListView">
+      <item name="android:listSelector">@drawable/ccl_component_list_selector_holo_light</item>
+  </style>
+
+  <style name="ListViewCCL_Component.White" parent="android:Widget.ListView.White">
+      <item name="android:listSelector">@drawable/ccl_component_list_selector_holo_light</item>
+  </style>
+
+  <style name="SpinnerItemCCL_Component" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+      <item name="android:textColor">#000000</item>
+  </style>
+
+</resources>

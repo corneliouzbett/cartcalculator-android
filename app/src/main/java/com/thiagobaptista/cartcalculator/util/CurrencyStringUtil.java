@@ -30,7 +30,6 @@ public class CurrencyStringUtil
 	public CurrencyStringUtil()
 	{
 		numberFormat = NumberFormat.getCurrencyInstance();
-		
 		currencySymbol = numberFormat.getCurrency().getSymbol();
 	}
 	
