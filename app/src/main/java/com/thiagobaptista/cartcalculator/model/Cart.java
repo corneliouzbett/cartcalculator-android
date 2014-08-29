@@ -61,7 +61,6 @@ public class Cart implements Serializable
 	public double getTotalDue()
 	{
 		double total = 0.0;
-		
 		for (CartItem item : items)
 		{
 			total += item.getTotalPrice();
@@ -98,7 +97,6 @@ public class Cart implements Serializable
 				new CartItem(new Product("Keychain", 0.99), 1), 
 				new CartItem(new Product("Bread", 1.12), 6), 
 		};
-		
 		this.items = new ArrayList<CartItem>( Arrays.asList(itens) );
 	}
 }
