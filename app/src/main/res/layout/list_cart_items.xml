@@ -1,13 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" 
     android:layout_width="match_parent" 
-    android:layout_height="match_parent"  
-    android:orientation="horizontal" 
+    android:layout_height="match_parent"
+    android:gravity="center"
     android:padding="@dimen/standard_space" 
     android:descendantFocusability="blocksDescendants">
     
     <LinearLayout 
         android:layout_width="wrap_content" 
-        android:layout_height="match_parent" 
+        android:layout_height="wrap_content"
         android:orientation="vertical" 
         android:layout_alignParentLeft="true">
         
@@ -27,16 +27,18 @@
     
     <LinearLayout 
         android:layout_width="wrap_content" 
-        android:layout_height="match_parent" 
-        android:layout_gravity="right" 
-        android:layout_alignParentRight="true">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
 	    
 	    <ImageButton
 	        android:id="@+id/button_list_cart_items_minus_item"
 		    android:layout_width="@dimen/button_item_quantity_width" 
 		    android:layout_height="match_parent"
             android:background="@android:color/transparent"
-            android:src="@drawable/btn_minus"/>
+            android:src="@drawable/btn_minus"
+            />
 	    
 	    <TextView 
 	        android:id="@+id/text_view_list_cart_items_quantity" 

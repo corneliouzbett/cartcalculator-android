@@ -69,13 +69,16 @@ public class CurrencyMaskTextWatcher implements TextWatcher
 		alreadyUpdating = true;
 		editText.setText(updatedText);
 
+        // FIXME doen't work for currencies such as euros
+        // This code as it is assumes the currency sign (ex. "R$") is located
+        // on the beginning of the string; that is not the case of all currencies,
+        // such as euro and the russian ruble
 		editText.setSelection( updatedText.length() );
 	}
 
 	private String parseInput(String input)
 	{
 		CurrencyStringUtil helper = new CurrencyStringUtil();
-		
 		double numericValue = helper.numericValueFrom(input);			
 		String formatedText = helper.formattedTextFrom(numericValue);
 		

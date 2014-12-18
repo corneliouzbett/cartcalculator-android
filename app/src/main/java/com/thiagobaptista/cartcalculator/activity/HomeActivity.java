@@ -160,7 +160,6 @@ public class HomeActivity extends ActionBarActivity
 	        	return super.onContextItemSelected(menuItem);	        	
 	        }
 	    }
-
 	}
 	
 	public void clearList()
@@ -177,7 +176,6 @@ public class HomeActivity extends ActionBarActivity
 		{
 			adapter.updateByCart(cart);
 		}
-		
 		reloadTotalDueText();
 	}
 	
@@ -209,7 +207,6 @@ public class HomeActivity extends ActionBarActivity
 		if (totalDueTextView != null)
 		{			
 			String totalText = cart.getTotalDueText();
-			
 			totalDueTextView.setText(totalText);
 		}
 	}
@@ -236,7 +233,6 @@ public class HomeActivity extends ActionBarActivity
 	private void setupCartItemListView()
 	{
 		itensListView = (ListView) findViewById(R.id.list_view_home_cart_items);
-		
 		if (itensListView != null)
 		{
 			setupListViewAdapter();
@@ -250,21 +246,18 @@ public class HomeActivity extends ActionBarActivity
 	private void setupListViewAdapter()
 	{
 		adapter = new CartItemsListAdapter(handler, getLayoutInflater(), cart);
-		
 		itensListView.setAdapter(adapter);
 	}
 	
 	private void setupListViewContextMenu()
 	{
 		itensListView.setOnItemLongClickListener( new CartItemListItemLongClickAction(handler) );
-		
 		registerForContextMenu(itensListView);
 	}
 
 	private void setupEmptyListView()
 	{
 		TextView emptyListTextView = (TextView) findViewById(R.id.empty_list);
-		
 		if (emptyListTextView != null)
 		{
 			itensListView.setEmptyView(emptyListTextView);
