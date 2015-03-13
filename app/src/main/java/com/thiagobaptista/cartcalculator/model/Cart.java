@@ -28,14 +28,14 @@ import com.thiagobaptista.cartcalculator.util.CurrencyStringUtil;
 
 public class Cart implements Serializable
 {
-	private static final long serialVersionUID = -7764200800949285163L;
-	
+	private static final long serialVersionUID = -7764200800949285173L;
+
 	private List<CartItem> items;
 	
 	public Cart()
 	{
 		//generateCartItemArray();
-		items = new ArrayList<CartItem>(0);
+		items = new ArrayList<>(0);
 	}
 	
 	public void add(CartItem item)
@@ -76,7 +76,7 @@ public class Cart implements Serializable
 	
 	public void clear() 
 	{
-		items = new ArrayList<CartItem>(0);	
+		items = new ArrayList<>(0);
 	}
 
 	//for debug purposes
@@ -97,6 +97,6 @@ public class Cart implements Serializable
 				new CartItem(new Product("Keychain", 0.99), 1), 
 				new CartItem(new Product("Bread", 1.12), 6), 
 		};
-		this.items = new ArrayList<CartItem>( Arrays.asList(itens) );
+		this.items = new ArrayList<>( Arrays.asList(itens) );
 	}
 }

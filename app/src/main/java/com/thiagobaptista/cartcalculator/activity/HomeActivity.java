@@ -60,9 +60,7 @@ public class HomeActivity extends ActionBarActivity
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		performInitialSetup(savedInstanceState);
-		
-		setupCart(savedInstanceState);		
-		
+		setupCart(savedInstanceState);
 		setupViews();
 	}
 	
@@ -70,7 +68,6 @@ public class HomeActivity extends ActionBarActivity
 	protected void onResume()
 	{
 		super.onResume();
-		
 		reloadList();
 	}
 	
@@ -108,7 +105,6 @@ public class HomeActivity extends ActionBarActivity
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		getMenuInflater().inflate(R.menu.home_options_menu, menu);
-		
 		return super.onCreateOptionsMenu(menu);
 	}
 	
@@ -225,8 +221,7 @@ public class HomeActivity extends ActionBarActivity
 
 	private void setupViews()
 	{
-		setupCartItemListView();	
-		
+		setupCartItemListView();
 		setupTotalDueTextView();
 	}
 	
@@ -236,9 +231,7 @@ public class HomeActivity extends ActionBarActivity
 		if (itensListView != null)
 		{
 			setupListViewAdapter();
-			
 			setupListViewContextMenu();
-			
 			setupEmptyListView();
 		}
 	}
